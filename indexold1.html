@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComfortTheLawyer — Employment Tribunal Guide</title>
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#faf8f5;
+    --accent:#7a1f2b; /* deep burgundy, legal/authority tone */
+    --accent-soft:#f3e6e3;
+    --gold:#b08d57;
+    --line:#e4ded6;
+    --muted:#6b6459;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .logo{font-weight:bold; font-size:1.1rem; letter-spacing:0.5px;}
+  nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    margin:0; padding:0;
+    font-size:0.95rem;
+  }
+  nav a{text-decoration:none; border-bottom:1px solid transparent;}
+  nav a:hover{border-bottom:1px solid var(--accent);}
+  .contact-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:9px 18px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:0.9rem;
+    font-family:Arial, sans-serif;
+  }
+  .hero{
+    text-align:center;
+    padding:80px 20px 60px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .hero h1{
+    font-size:2.4rem;
+    margin-bottom:16px;
+    letter-spacing:-0.5px;
+  }
+  .hero p{
+    color:var(--muted);
+    font-size:1.1rem;
+    max-width:560px;
+    margin:0 auto 30px;
+    font-family:Arial, sans-serif;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:2px;
+    text-decoration:none;
+    font-family:Arial, sans-serif;
+    font-weight:bold;
+    letter-spacing:0.3px;
+    transition:background .2s;
+  }
+  .cta:hover{background:#5e1720;}
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:36px 0 10px;
+    font-family:Arial, sans-serif;
+  }
+  .countdown .unit{
+    text-align:center;
+    min-width:64px;
+  }
+  .countdown .num{
+    font-size:1.8rem;
+    font-weight:bold;
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:10px 0;
+    display:block;
+  }
+  .countdown .label{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--muted);
+  }
+  section{padding:70px 40px;}
+  .features{
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+  }
+  .feature-card{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:26px;
+    border-radius:4px;
+    font-family:Arial, sans-serif;
+  }
+  .feature-card .check{
+    color:var(--accent);
+    font-weight:bold;
+    margin-bottom:10px;
+    display:block;
+  }
+  .about{
+    max-width:700px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .about .eyebrow{
+    font-family:Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.75rem;
+    color:var(--gold);
+  }
+  .about h2{font-size:1.8rem; margin:8px 0 4px;}
+  .about .role{color:var(--muted); font-family:Arial, sans-serif; margin-bottom:20px;}
+  .waitlist{
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+  }
+  .waitlist h2{font-size:1.9rem; margin-bottom:8px;}
+  .waitlist .sub{font-family:Arial, sans-serif; opacity:0.9; margin-bottom:30px;}
+  .waitlist-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:560px;
+    margin:0 auto 34px;
+    text-align:left;
+    font-family:Arial, sans-serif;
+  }
+  .waitlist-grid div{display:flex; gap:10px; align-items:flex-start;}
+  .waitlist .cta{background:#fff; color:var(--accent);}
+  .waitlist .cta:hover{background:var(--accent-soft);}
+  .testimonials{max-width:900px; margin:0 auto; text-align:center;}
+  .testimonials h2{font-size:1.8rem; margin-bottom:8px;}
+  .placeholder-flag{
+    font-family:Arial, sans-serif;
+    font-size:0.8rem;
+    background:#fff3cd;
+    color:#7a5b00;
+    border:1px solid #f0d78c;
+    padding:8px 14px;
+    border-radius:4px;
+    display:inline-block;
+    margin-bottom:30px;
+  }
+  .t-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+  }
+  .t-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:24px;
+    font-family:Arial, sans-serif;
+  }
+  .t-card img{
+    width:48px; height:48px;
+    border-radius:50%;
+    margin-bottom:10px;
+    object-fit:cover;
+  }
+  .t-card .name{font-weight:bold;}
+  .faq{max-width:720px; margin:0 auto;}
+  .faq h2{font-size:1.8rem; text-align:center; margin-bottom:6px;}
+  .faq .sub{text-align:center; color:var(--muted); font-family:Arial, sans-serif; margin-bottom:30px;}
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item summary{
+    cursor:pointer;
+    padding:16px 4px;
+    font-weight:bold;
+    font-family:Arial, sans-serif;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+'; color:var(--accent); font-size:1.2rem;}
+  .faq-item[open] summary::after{content:'−';}
+  .faq-item p{
+    font-family:Arial, sans-serif;
+    color:var(--muted);
+    padding-bottom:16px;
+    margin:0;
+  }
+  .faq-item ul{font-family:Arial, sans-serif; color:var(--muted);}
+  .closing{
+    text-align:center;
+    background:var(--accent-soft);
+    font-family:Arial, sans-serif;
+    font-style:italic;
+    padding:50px 40px;
+  }
+  .contact{max-width:600px; margin:0 auto; text-align:center;}
+  .contact h2{font-size:1.8rem;}
+  form{
+    text-align:left;
+    font-family:Arial, sans-serif;
+    margin-top:24px;
+  }
+  form label{display:block; font-size:0.85rem; margin-bottom:6px; color:var(--muted);}
+  form input, form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:16px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    font-family:Arial, sans-serif;
+  }
+  #formStatus{font-family:Arial, sans-serif; font-size:0.9rem; margin-top:10px;}
+  footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--line);
+    font-family:Arial, sans-serif;
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  @media(max-width:700px){
+    .features, .t-grid, .waitlist-grid{grid-template-columns:1fr;}
+    nav ul{display:none;}
+    header{padding:16px 20px;}
+    section{padding:50px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ComfortTheLawyer</div>
+  <nav>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+  <a class="contact-btn" href="#contact">Contact Us</a>
+</header>
+
+<section class="hero">
+  <h1>The guide you need at the start of your tribunal journey</h1>
+  <p>Get practical tribunal guidance, exclusive resources, and be first to hear about new guides from ComfortTheLawyer.</p>
+  <a class="cta" href="#pricing" id="preorderBtn">Pre-Order Now</a>
+
+  <div class="countdown" id="countdown">
+    <div class="unit"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
+    <div class="unit"><span class="num" id="cd-hours">--</span><span class="label">Hours</span></div>
+    <div class="unit"><span class="num" id="cd-mins">--</span><span class="label">Minutes</span></div>
+    <div class="unit"><span class="num" id="cd-secs">--</span><span class="label">Seconds</span></div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="feature-card">
+    <span class="check">✓</span>
+    Understand your rights and the Employment Tribunal process.
+  </div>
+  <div class="feature-card">
+    <span class="check">✓</span>
+    Navigate procedural requirements with confidence.
+  </div>
+  <div class="feature-card">
+    <span class="check">✓</span>
+    Level the playing field against legally represented employers.
+  </div>
+</section>
+
+<section class="about">
+  <div class="eyebrow">Meet the author</div>
+  <h2>Comfort Iyiewuare</h2>
+  <div class="role">Founder of ComfortTheLawyer</div>
+  <p>Helping litigants-in-person navigate employment disputes with confidence, clarity and practical guidance. Drawing on legal knowledge, lived experience, and the experiences of other litigants, Comfort creates resources that simplify complex legal processes and help people advocate effectively for themselves.</p>
+</section>
+
+<section class="waitlist" id="pricing">
+  <h2>Book Launch Waiting List</h2>
+  <div class="sub">Be Among the First Readers</div>
+  <div class="waitlist-grid">
+    <div>✓ <span>Launch day discounts</span></div>
+    <div>✓ <span>Exclusive bonus resources</span></div>
+    <div>✓ <span>Early access to future guides</span></div>
+    <div>✓ <span>Tribunal tips delivered to your inbox</span></div>
+  </div>
+  <a class="cta" href="#contact">Join</a>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <h2>Testimonials from our friends</h2>
+  <div class="placeholder-flag">⚠ Placeholder content — replace with real reader testimonials before launch</div>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="name">Emily Rodriguez</div>
+      <p>"Practical, empowering, and easy to understand."</p>
+    </div>
+    <div class="t-card">
+      <div class="name">Sophia Adichie</div>
+      <p>"The guide I wish I'd had at the start of my tribunal journey."</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Your questions answered</h2>
+  <div class="sub">Find quick answers to common queries about the guide</div>
+
+  <details class="faq-item">
+    <summary>Who is this guide for?</summary>
+    <p>This guide is designed primarily for Black women navigating the UK Employment Tribunal without legal representation. However, the information may also be helpful to other litigants-in-person seeking practical guidance and support.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Do I need a solicitor to bring an Employment Tribunal claim?</summary>
+    <p>No. Many people successfully represent themselves in Employment Tribunals. This guide helps you better understand the process and prepare your case with greater confidence.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Will this guide tell me how to win my case?</summary>
+    <p>No. Every case is unique. The guide does not provide legal advice or guarantee outcomes. Instead, it helps you understand the tribunal process, organise your evidence, and avoid common pitfalls.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What topics does the guide cover?</summary>
+    <div>
+      <ul>
+        <li>ACAS Early Conciliation</li>
+        <li>Tribunal time limits</li>
+        <li>ET1 and ET3 forms</li>
+        <li>Building a case strategy</li>
+        <li>Gathering and organising evidence</li>
+        <li>Hearing preparation</li>
+        <li>Settlements and negotiations</li>
+        <li>Emotional wellbeing and resilience</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>Is this legal advice?</summary>
+    <p>No. The guide is for educational and informational purposes only. If you require legal advice, you should seek assistance from a qualified legal professional.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How will I receive the guide?</summary>
+    <p>The guide will be available as a digital ebook. Subscribers to the ComfortTheLawyer mailing list will be the first to receive launch updates and exclusive bonuses.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>What do I get when I join the mailing list?</summary>
+    <div>
+      <ul>
+        <li>Employment Tribunal tips and updates</li>
+        <li>Access to free resources and checklists</li>
+        <li>Early access to new guides</li>
+        <li>Exclusive launch announcements and offers</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>What is the Free Employment Tribunal Preparation Checklist?</summary>
+    <p>It is a practical resource designed to help you prepare for your tribunal journey by tracking deadlines, gathering evidence, and planning key actions before submitting your claim.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Will there be more guides in the future?</summary>
+    <div>
+      <p>Yes. ComfortTheLawyer is building a growing library of practical legal guides, including:</p>
+      <ul>
+        <li>Employment Tribunal Workbook</li>
+        <li>Workplace Discrimination Survival Guide</li>
+        <li>Self-Advocacy Toolkit</li>
+        <li>Additional resources for litigants-in-person</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>Why should I subscribe now?</summary>
+    <div>
+      <ul>
+        <li>Book launch notifications</li>
+        <li>Free resources</li>
+        <li>Future guide releases</li>
+        <li>Exclusive subscriber-only content</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<div class="closing">
+  Don't navigate the tribunal process alone. Join the ComfortTheLawyer community and get the clarity, confidence, and practical support you need.
+</div>
+
+<section class="contact" id="contact">
+  <h2>Let's get in touch</h2>
+  <p>Need assistance or want to leave a comment? Fill out the form, we'll be in touch soon!</p>
+  <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Required hidden input so Netlify's build bots can detect this form -->
+    <input type="hidden" name="form-name" value="contact">
+    <!-- Honeypot field to catch spam bots; keep hidden from real users -->
+    <p style="display:none;">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <a class="cta" href="javascript:;" onclick="document.getElementById('contactForm').requestSubmit()">Send message</a>
+  </form>
+  <div id="formStatus"></div>
+</section>
+
+<footer>
+  © 2026 ComfortTheLawyer. All rights reserved.
+</footer>
+
+<script>
+  // Countdown — set to 14 days from page load as a working placeholder.
+  // Replace targetDate with the real launch date/time.
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 14);
+
+  function updateCountdown(){
+    const now = new Date();
+    let diff = targetDate - now;
+    if(diff < 0) diff = 0;
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = h;
+    document.getElementById('cd-mins').textContent = m;
+    document.getElementById('cd-secs').textContent = s;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Contact form — submits to Netlify Forms (works automatically once deployed on Netlify).
+  // Locally (or on any non-Netlify host) this fetch will fail, which is expected —
+  // the form only actually captures submissions once the site is live on Netlify.
+  function encodeFormData(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = this;
+    const statusEl = document.getElementById('formStatus');
+    const formData = {
+      "form-name": form.querySelector('[name="form-name"]').value,
+      name: form.querySelector('#name').value,
+      email: form.querySelector('#email').value,
+      message: form.querySelector('#message').value,
+      "bot-field": form.querySelector('[name="bot-field"]').value
+    };
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeFormData(formData)
+    })
+      .then(() => {
+        statusEl.textContent = 'Thank you for getting in touch! One of our colleagues will get back to you shortly.';
+        form.reset();
+      })
+      .catch(() => {
+        statusEl.textContent = "Something went wrong sending your message. Please try again, or email us directly.";
+      });
+  });
+</script>
+
+</body>
+</html>
