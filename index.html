@@ -105,6 +105,26 @@
     margin:0 auto 30px;
     font-family:Arial, sans-serif;
   }
+  .price-tag{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    margin-bottom:22px;
+  }
+  .price-tag .price-label{
+    font-family:Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.75rem;
+    color:var(--gold);
+  }
+  .price-tag .price-amount{
+    font-size:2.6rem;
+    font-weight:bold;
+    color:var(--accent);
+    line-height:1;
+  }
   .cta{
     display:inline-block;
     background:var(--accent);
@@ -493,7 +513,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <nav>
     <ul>
       <li><a href="#features">Features</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#hero">Pricing</a></li>
       <li><a href="#story">Her Story</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#booking">Book a 1-on-1</a></li>
@@ -502,11 +522,15 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <a class="contact-btn" href="#contact">Contact Us</a>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
   <img class="book-cover" src="guide.webp" alt="Stand Your Ground: The Complete UK Employment Tribunal Guide, by Comfort Iyiewuare">
   <h1>The guide you need at the start of your tribunal journey</h1>
   <p>Get practical tribunal guidance, exclusive resources, and be first to hear about new guides from ComfortTheLawyer.</p>
-  <a class="cta" href="#pricing" id="preorderBtn">Pre-Order Now</a>
+  <div class="price-tag">
+    <span class="price-label">Pre-Order Price</span>
+    <span class="price-amount">£97</span>
+  </div>
+  <a class="cta" href="https://buy.stripe.com/4gMcN764ecxldPr47I7EQ02" id="preorderBtn">Pre-Order Now</a>
 
   <div class="countdown" id="countdown">
     <div class="unit"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
@@ -561,7 +585,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   </div>
 </section>
 
-<section class="waitlist" id="pricing">
+<section class="waitlist" id="waitlist">
   <h2>Join the ComfortTheLawyer List</h2>
   <div class="sub">Launch updates, tribunal tips, and newsletters — straight to your inbox</div>
   <div class="waitlist-grid">
