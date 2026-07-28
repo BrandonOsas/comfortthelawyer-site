@@ -145,6 +145,14 @@
     margin:36px 0 10px;
     font-family:Arial, sans-serif;
   }
+  .launched{
+    text-align:center;
+    margin:36px 0 10px;
+    font-family:Arial, sans-serif;
+    font-weight:bold;
+    color:var(--accent);
+    font-size:1.1rem;
+  }
   .countdown .unit{
     text-align:center;
     min-width:64px;
@@ -771,8 +779,16 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
 
   function updateCountdown(){
     const now = new Date();
-    let diff = targetDate - now;
-    if(diff < 0) diff = 0;
+    const diff = targetDate - now;
+
+    if(diff <= 0){
+      document.querySelector('.price-tag .price-label').textContent = 'Price';
+      document.getElementById('preorderBtn').textContent = 'Buy Now';
+      document.getElementById('countdown').outerHTML = '<div class="launched">Available now!</div>';
+      clearInterval(countdownInterval);
+      return;
+    }
+
     const d = Math.floor(diff / (1000*60*60*24));
     const h = Math.floor((diff / (1000*60*60)) % 24);
     const m = Math.floor((diff / (1000*60)) % 60);
@@ -783,7 +799,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
     document.getElementById('cd-secs').textContent = s;
   }
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  const countdownInterval = setInterval(updateCountdown, 1000);
 
   // Contact form — submits to Netlify Forms (works automatically once deployed on Netlify).
   // Locally (or on any non-Netlify host) this fetch will fail, which is expected —
