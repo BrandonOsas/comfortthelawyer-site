@@ -105,32 +105,6 @@
     margin:0 auto 30px;
     font-family:Arial, sans-serif;
   }
-  .price-tag{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-    margin-bottom:22px;
-  }
-  .price-tag .price-label{
-    font-family:Arial, sans-serif;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:0.75rem;
-    color:var(--gold);
-  }
-  .price-tag .price-amount{
-    font-size:2.6rem;
-    font-weight:bold;
-    color:var(--accent);
-    line-height:1;
-  }
-  .includes{
-    font-family:Arial, sans-serif;
-    font-size:0.82rem;
-    color:var(--muted);
-    margin-top:12px;
-  }
   .cta{
     display:inline-block;
     background:var(--accent);
@@ -144,40 +118,6 @@
     transition:background .2s;
   }
   .cta:hover{background:#5e1720;}
-  .countdown{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin:36px 0 10px;
-    font-family:Arial, sans-serif;
-  }
-  .launched{
-    text-align:center;
-    margin:36px 0 10px;
-    font-family:Arial, sans-serif;
-    font-weight:bold;
-    color:var(--accent);
-    font-size:1.1rem;
-  }
-  .countdown .unit{
-    text-align:center;
-    min-width:64px;
-  }
-  .countdown .num{
-    font-size:1.8rem;
-    font-weight:bold;
-    background:var(--accent-soft);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:10px 0;
-    display:block;
-  }
-  .countdown .label{
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:var(--muted);
-  }
   section{padding:70px 40px;}
   .features{
     max-width:900px;
@@ -540,19 +480,21 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <img class="book-cover" src="guide.webp" alt="Stand Your Ground: The Complete UK Employment Tribunal Guide, by Comfort Iyiewuare">
   <h1>The guide you need at the start of your tribunal journey</h1>
   <p>Get practical tribunal guidance, exclusive resources, and be first to hear about new guides from ComfortTheLawyer.</p>
-  <div class="price-tag">
-    <span class="price-label">Pre-Order Price</span>
-    <span class="price-amount">£97</span>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">The Workplace Clarity eGuide</div>
+      <div class="price-amount">£67</div>
+      <p>The complete eGuide only — practical, step-by-step guidance to understand your rights, build your case, and navigate the Employment Tribunal process at your own pace.</p>
+      <a class="cta" href="https://buy.stripe.com/6oU8wR3W6apdfXzgUu7EQ03">Buy Now</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">The Workplace Clarity Complete Bundle</div>
+      <div class="price-amount">£97</div>
+      <p>The eGuide plus ready-to-use tribunal document templates and a 15-minute consultation with Comfort to help you apply it to your case.</p>
+      <a class="cta" href="https://buy.stripe.com/4gMcN764ecxldPr47I7EQ02">Buy Now</a>
+    </div>
   </div>
-  <a class="cta" href="https://buy.stripe.com/4gMcN764ecxldPr47I7EQ02" id="preorderBtn">Pre-Order Now</a>
-  <div class="includes">Includes the eguide, bonus templates, and a free 30-minute consultation with Comfort</div>
 
-  <div class="countdown" id="countdown">
-    <div class="unit"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
-    <div class="unit"><span class="num" id="cd-hours">--</span><span class="label">Hours</span></div>
-    <div class="unit"><span class="num" id="cd-mins">--</span><span class="label">Minutes</span></div>
-    <div class="unit"><span class="num" id="cd-secs">--</span><span class="label">Seconds</span></div>
-  </div>
 </section>
 
 <section class="features" id="features">
@@ -780,34 +722,8 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   fetch("https://assets.mailerlite.com/jsonp/2480558/forms/191703350414149437/takel")
 </script>
 
+
 <script>
-  // Countdown — real launch date.
-  const targetDate = new Date(2026, 6, 30, 0, 0, 0);
-
-  function updateCountdown(){
-    const now = new Date();
-    const diff = targetDate - now;
-
-    if(diff <= 0){
-      document.querySelector('.price-tag .price-label').textContent = 'Price';
-      document.getElementById('preorderBtn').textContent = 'Buy Now';
-      document.getElementById('countdown').outerHTML = '<div class="launched">Available now!</div>';
-      clearInterval(countdownInterval);
-      return;
-    }
-
-    const d = Math.floor(diff / (1000*60*60*24));
-    const h = Math.floor((diff / (1000*60*60)) % 24);
-    const m = Math.floor((diff / (1000*60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-    document.getElementById('cd-days').textContent = d;
-    document.getElementById('cd-hours').textContent = h;
-    document.getElementById('cd-mins').textContent = m;
-    document.getElementById('cd-secs').textContent = s;
-  }
-  updateCountdown();
-  const countdownInterval = setInterval(updateCountdown, 1000);
-
   // Contact form — submits to Netlify Forms (works automatically once deployed on Netlify).
   // Locally (or on any non-Netlify host) this fetch will fail, which is expected —
   // the form only actually captures submissions once the site is live on Netlify.
