@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ComfortTheLawyer — Employment Tribunal Guide</title>
+<title>ComfortTheLawyer — Employment Tribunal Coach</title>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 <style>
   :root{
     --ink:#1a1a1a;
@@ -176,12 +178,39 @@
     font-weight:normal;
     margin-right:8px;
   }
+  .price-card .price-amount.subtle{
+    font-size:1rem;
+    font-weight:normal;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
   .price-card p{color:var(--muted); margin-bottom:24px; flex-grow:1;}
   .price-card .cta{align-self:flex-start;}
   .price-card .note{
     font-size:0.78rem;
     color:var(--muted);
     margin-top:10px;
+  }
+  .cta.secondary{
+    background:transparent;
+    color:var(--accent);
+    border:1.5px solid var(--accent);
+  }
+  .cta.secondary:hover{background:var(--accent-soft);}
+  .free-consult{
+    margin:36px auto 0;
+    max-width:560px;
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px 28px;
+    text-align:center;
+    font-family:Arial, sans-serif;
+  }
+  .free-consult p{
+    margin:0 0 16px;
+    color:var(--ink);
+    font-size:1rem;
   }
   .about{
     max-width:700px;
@@ -474,10 +503,10 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <nav>
     <ul>
       <li><a href="#features">Features</a></li>
-      <li><a href="#hero">Pricing</a></li>
+      <li><a href="#coaching">Legal Coaching</a></li>
+      <li><a href="#guide">Guide</a></li>
       <li><a href="#story">Her Story</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#booking">Book a 1-on-1</a></li>
     </ul>
   </nav>
   <a class="contact-btn" href="#contact">Contact Us</a>
@@ -487,21 +516,33 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <img class="book-cover" src="guide.webp" alt="Stand Your Ground: The Complete UK Employment Tribunal Guide, by Comfort Iyiewuare">
   <h1>The guide you need at the start of your tribunal journey</h1>
   <p>Get practical tribunal guidance, exclusive resources, and be first to hear about new guides from ComfortTheLawyer.</p>
+</section>
+
+<section class="booking" id="coaching">
+  <div class="eyebrow">Legal Coaching Sessions</div>
+  <h2>Get 1-on-1 coaching from Comfort</h2>
+  <p>Personalised legal coaching to help you build and run your Employment Tribunal case with confidence.</p>
   <div class="pricing-grid">
     <div class="price-card">
-      <div class="price-name">The Workplace Clarity eGuide</div>
-      <div class="price-amount"><span class="price-old">£67</span>£47</div>
-      <p>The complete eGuide only — practical, step-by-step guidance to understand your rights, build your case, and navigate the Employment Tribunal process at your own pace.</p>
-      <a class="cta" href="https://buy.stripe.com/6oU8wR3W6apdfXzgUu7EQ03">Buy Now</a>
+      <div class="price-name">Workplace and Tribunal Clarity Session</div>
+      <p>A focused 1-hour, 1-on-1 session with Comfort to work through your specific situation and get a clear plan of action.</p>
+      <div class="price-amount subtle">£299</div>
+      <a class="cta" href="https://buy.stripe.com/28EfZjeAKcxl9zbeMm7EQ01">Buy Now</a>
+      <div class="note">You'll be able to schedule your session right after checkout.</div>
     </div>
     <div class="price-card">
-      <div class="price-name">The Workplace Clarity Complete Bundle</div>
-      <div class="price-amount"><span class="price-old">£97</span>£77</div>
-      <p>The eGuide plus ready-to-use tribunal document templates and a 15-minute consultation with Comfort to help you apply it to your case.</p>
-      <a class="cta" href="https://buy.stripe.com/4gMcN764ecxldPr47I7EQ02">Buy Now</a>
+      <div class="price-name">Workplace and Tribunal Clarity Session Bundle</div>
+      <p>Five hours of 1-on-1 time with Comfort, to use across multiple sessions as your case progresses.</p>
+      <div class="price-amount subtle">£1,495</div>
+      <a class="cta" href="https://book.stripe.com/dRmfZj2S20ODdPraw67EQ00">Buy Now</a>
+      <div class="note">You'll be able to schedule your first session right after checkout.</div>
     </div>
   </div>
 
+  <div class="free-consult">
+    <p>Not ready to book a session? Try a <strong>free 15-minute consultation</strong> with Comfort to talk through your situation — no strings attached.</p>
+    <a class="cta secondary" href="https://calendly.com/comfortthelawyer/free-15-min-consultation" target="_blank" rel="noopener" onclick="return openBooking(event);">Book Your Free 15-Min Consultation</a>
+  </div>
 </section>
 
 <section class="features" id="features">
@@ -527,24 +568,22 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   <p>Helping litigants-in-person navigate employment disputes with confidence, clarity and practical guidance. Drawing on legal knowledge, lived experience, and the experiences of other litigants, Comfort creates resources that simplify complex legal processes and help people advocate effectively for themselves.</p>
 </section>
 
-<section class="booking" id="booking">
-  <div class="eyebrow">Personal support</div>
-  <h2>Need more than the guide?</h2>
-  <p>Book time with Comfort for guidance tailored to your specific situation.</p>
+<section class="booking" id="guide">
+  <div class="eyebrow">Prefer to go at your own pace?</div>
+  <h2>The Workplace Clarity Guide</h2>
+  <p>Practical, self-paced resources you read and use on your own schedule.</p>
   <div class="pricing-grid">
     <div class="price-card">
-      <div class="price-name">The Workplace Clarity Session</div>
-      <div class="price-amount">£299</div>
-      <p>A focused 1-hour, 1-on-1 session with Comfort to work through your specific situation and get a clear plan of action.</p>
-      <a class="cta" href="https://buy.stripe.com/28EfZjeAKcxl9zbeMm7EQ01">Buy Now</a>
-      <div class="note">You'll be able to schedule your session right after checkout.</div>
+      <div class="price-name">The Workplace Clarity eGuide</div>
+      <div class="price-amount"><span class="price-old">£67</span>£47</div>
+      <p>The complete eGuide only — practical, step-by-step guidance to understand your rights, build your case, and navigate the Employment Tribunal process at your own pace.</p>
+      <a class="cta" href="https://buy.stripe.com/6oU8wR3W6apdfXzgUu7EQ03">Buy Now</a>
     </div>
     <div class="price-card">
-      <div class="price-name">The Workplace Clarity Framework Bundle</div>
-      <div class="price-amount">£1,495</div>
-      <p>Five hours of 1-on-1 time with Comfort, to use across multiple sessions as your case progresses.</p>
-      <a class="cta" href="https://book.stripe.com/dRmfZj2S20ODdPraw67EQ00">Buy Now</a>
-      <div class="note">You'll be able to schedule your first session right after checkout.</div>
+      <div class="price-name">The Workplace Clarity Complete Bundle</div>
+      <div class="price-amount"><span class="price-old">£97</span>£77</div>
+      <p>The eGuide plus ready-to-use tribunal document templates and a 15-minute consultation with Comfort to help you apply it to your case.</p>
+      <a class="cta" href="https://buy.stripe.com/4gMcN764ecxldPr47I7EQ02">Buy Now</a>
     </div>
   </div>
 </section>
@@ -765,6 +804,23 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
         statusEl.textContent = "Something went wrong sending your message. Please try again, or email us directly.";
       });
   });
+</script>
+
+<script>
+  // Free consultation booking — uses Calendly's popup widget if the script loaded successfully.
+  // Falls back to opening Calendly in a new tab if the widget script was blocked
+  // (e.g. by an ad blocker) or hasn't finished loading yet.
+  const calendlyUrl = 'https://calendly.com/comfortthelawyer/free-15-min-consultation';
+
+  function openBooking(event){
+    if (typeof Calendly !== 'undefined' && Calendly.initPopupWidget) {
+      if (event) event.preventDefault();
+      Calendly.initPopupWidget({ url: calendlyUrl });
+      return false;
+    }
+    // Calendly script not available — let the link behave normally (opens in new tab)
+    return true;
+  }
 </script>
 
 </body>
